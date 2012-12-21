@@ -1,11 +1,12 @@
 PROJECTIONS - AN IDEA COMPANY
+-----------------------------------------------------------------------------------
 
 The purpose of this readme is to help anyone who uses the site (PROJECTIONS) to use
 it appropriately for their needs.
 
 
-Some Definitions
-====================================================================================
+###Some Definitions
+
 Artist - A legal person or group responsible for legally creating, owning,  and sell
 	 ing artwork - initially for the purposes of this site, in the area of music.
 
@@ -21,14 +22,12 @@ Creator - The party responsible for overseeing the implementation and or physica
 	  ntial third party specified in the projection submission.
 
 
-Users
-====================================================================================
+###Users
 
 This section will contain instructions for users to follow. 
 
 
 
-Artists
-====================================================================================
+###Artists
 
 This section will contain instructions for artists to follow.
