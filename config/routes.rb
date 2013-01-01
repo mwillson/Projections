@@ -1,4 +1,13 @@
 Projections::Application.routes.draw do
+
+  root to: 'pages#home'
+
+  match '/about', to: 'pages#about'
+
+  match '/help', to: 'pages#help'
+
+  match '/contact', to: 'pages#contact'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

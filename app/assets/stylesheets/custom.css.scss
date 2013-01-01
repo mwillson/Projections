@@ -1,0 +1,65 @@
+@import "bootstrap";
+
+/* Universal */
+
+.center {
+  text-align:center;
+}
+
+/* Header */
+
+#logo {
+  img {
+    width:60%;
+    height:60%;
+    align:center;
+  }
+}
+
+.navbar {
+  .container {
+    background:url('top-background.png');
+    background-size:50% 100%;
+    border-bottom:1px solid black;
+  }
+}
+
+#navlist {
+  li {
+    a {
+      color:#fff;
+    }
+  }
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+}
+
+footer a {
+  color: #555;
+}  
+
+footer a:hover { 
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
+
