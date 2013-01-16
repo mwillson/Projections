@@ -1,3 +1,11 @@
+# == Schema Information
+#
+# Table name: films
+#
+#  projection_id :integer          not null, primary key
+#  description   :text
+#
+
 class Film < ActiveRecord::Base
   inherits_from :projection
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130113170448) do
+ActiveRecord::Schema.define(:version => 20130116181153) do
 
   create_table "films", :primary_key => "projection_id", :force => true do |t|
     t.text "description"
@@ -31,5 +31,16 @@ ActiveRecord::Schema.define(:version => 20130113170448) do
   create_table "songs", :primary_key => "projection_id", :force => true do |t|
     t.text "description"
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.boolean  "admin"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "password_digest"
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end

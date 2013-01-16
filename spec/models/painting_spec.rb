@@ -1,3 +1,11 @@
+# == Schema Information
+#
+# Table name: paintings
+#
+#  projection_id :integer          not null, primary key
+#  description   :text
+#
+
 require 'spec_helper'
 
 describe Painting do

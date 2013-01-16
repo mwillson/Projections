@@ -1,3 +1,11 @@
+# == Schema Information
+#
+# Table name: songs
+#
+#  projection_id :integer          not null, primary key
+#  description   :text
+#
+
 require 'spec_helper'
 
 describe Song do
