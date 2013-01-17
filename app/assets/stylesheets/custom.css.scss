@@ -1,5 +1,16 @@
 @import "bootstrap";
 
+
+/* mixins, variables, etc. */
+
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 /* Universal */
 
 .center {
@@ -24,7 +35,7 @@
   background-size: 50%;
   .container {
     background-color:white;
-    border: 2px double black;
+    /*border: 2px double black;*/
     padding: 10px;
   }
 }
@@ -33,7 +44,7 @@
   padding-bottom: 20px;
   &:after {
     height:2px;
-    background:$gray;
+    background:$purple;
     width:85%;
     display:block;
     content:"";
@@ -48,12 +59,47 @@
     border-bottom: 2px solid $purple;
     margin-right: 5px;
     margin-top: 5px;
+    padding-top: 0;
+    padding-bottom: 0;
     a {
-      color:black;
+      color:gray;
       &:hover {
         text-decoration:underline;
       }
     }
+  }
+}
+
+/* sidebar */
+
+aside {
+  section {
+    padding: 10px, 0;
+    border-top: 1px solid $grayLighter;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+  &:hover {
+    border: 2px solid purple;
   }
 }
 
@@ -88,3 +134,26 @@ footer ul li {
   margin-left: 10px;
 }
 
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  @include box-sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+/* micellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
