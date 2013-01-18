@@ -1,12 +1,27 @@
 <header class="navbar">
-    <div class="container center">
-      <%= link_to image_tag("logo_final.png", alt: "Projections"), root_path, id: "logo" %>
-   
-      <ul id="navlist" class="nav">
-        <li id="navitem"><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Help", '#' %></li>
-        <li><%= link_to "Sign in", '#' %></li>
-      </ul>
-      
+    <div class="container center" id="top">
+
+      <%= link_to image_tag("logo_final.png", alt: "Projections"), root_path, id: "logo" %> 
+      <% if signed_in? %>
+          <%= link_to current_user.name, current_user, id: "signin" %>
+          <%= link_to "Settings", '#', id: "signin" %>
+          <%= link_to "Sign out", signout_path, method: "delete" %>
+      <% else %>
+        <%= link_to "Sign in", signin_path, id: "signin" %>
+      <% end %>
+
     </div>
+</header>
+
+<header class="navbar" id="navigation">
+  <div class="container center">
+    <ul id="navlist" class="nav">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Help", help_path %></li>
+        <li><%= link_to "Feedback", feedback_path %></li>
+        <% if signed_in? %>
+          <li><%= link_to "Browse by User", '#' %></li>
+        <% end %>
+    </ul>
+  </div>
 </header>

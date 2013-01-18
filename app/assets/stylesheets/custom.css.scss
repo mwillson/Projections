@@ -26,7 +26,7 @@ $grayMediumLight: #eaeaea;
     padding-left:10px;
     align:center;
     float:left;
-    margin-bottom: 20px;
+   /* margin-bottom: 20px;*/
   }
 }
 
@@ -41,34 +41,61 @@ $grayMediumLight: #eaeaea;
 }
 
 .navbar {
-  padding-bottom: 20px;
-  &:after {
-    height:2px;
-    background:$purple;
-    width:85%;
-    display:block;
-    content:"";
-    margin:10px auto;
+  margin: 0;
+  .container#top {
+    background-image: url(http://s3.amazonaws.com/BlackcloudStatic/img/grid_noise.png);
   }
+}
+
+#navigation {
+    
+/*border-bottom: 3px solid #520066;*/
+/* IE10 Consumer Preview */ 
+background-image: -ms-linear-gradient(bottom, #000000 20%, #5E5E5E 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(bottom, #000000 20%, #5E5E5E 100%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(bottom, #000000 20%, #5E5E5E 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left bottom, left top, color-stop(.2, #000000), color-stop(1, #5E5E5E));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(bottom, #000000 20%, #5E5E5E 100%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to top, #000000 20%, #5E5E5E 100%);
+
 }
 
 #navlist {
   float:right;
   li {
-    border-left: 2px solid $purple;
-    border-bottom: 2px solid $purple;
-    margin-right: 5px;
-    margin-top: 5px;
     padding-top: 0;
     padding-bottom: 0;
     a {
       color:gray;
       &:hover {
+        color:yellow;
         text-decoration:underline;
       }
     }
   }
 }
+
+#signin {
+  color: black;
+  float: right;
+  padding-top: 10px;
+  padding-right: 30px;
+  &:hover {
+    text-decoration:underline;
+    background: none;
+  }
+}
+
 
 /* sidebar */
 
@@ -99,7 +126,7 @@ aside {
   float: left;
   margin-right: 10px;
   &:hover {
-    border: 2px solid purple;
+    border: 2px solid yellow;
   }
 }
 
@@ -149,6 +176,17 @@ input {
 }
 
 /* micellaneous */
+
+@font-face {
+    font-family: bitdust2;
+    src: asset-url('bitdust2.ttf', font);
+}
+
+.emphasis {
+  text-transform: uppercase;
+  color: #CE85E0;
+  font-family: bitdust2;
+}
 
 .debug_dump {
   clear: both;
