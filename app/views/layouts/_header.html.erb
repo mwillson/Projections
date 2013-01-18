@@ -4,7 +4,7 @@
       <%= link_to image_tag("logo_final.png", alt: "Projections"), root_path, id: "logo" %> 
       <% if signed_in? %>
           <%= link_to current_user.name, current_user, id: "signin" %>
-          <%= link_to "Settings", '#', id: "signin" %>
+          <%= link_to "Settings", edit_user_path(current_user), id: "signin" %>
           <%= link_to "Sign out", signout_path, method: "delete" %>
       <% else %>
         <%= link_to "Sign in", signin_path, id: "signin" %>
@@ -20,7 +20,7 @@
         <li><%= link_to "Help", help_path %></li>
         <li><%= link_to "Feedback", feedback_path %></li>
         <% if signed_in? %>
-          <li><%= link_to "Browse by User", '#' %></li>
+          <li><%= link_to "Browse by User", users_path %></li>
         <% end %>
     </ul>
   </div>
