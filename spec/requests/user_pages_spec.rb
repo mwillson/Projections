@@ -8,7 +8,7 @@ describe "User pages" do
     before { visit signup_path }
     let(:submit) { "Create my account" }
 
-    it { should have_selector('h1', text: 'Sign up') }
+    it { should have_selector('h2', text: 'Sign up') }
     it { should have_selector('title', text: 'Sign up') }
 
     describe "with invalid information" do
@@ -41,8 +41,9 @@ describe "User pages" do
     let(:user) { FactoryGirl.create(:user) }  
     before { visit user_path(user) }
 
-    it { should have_selector('h1', text: user.name) }
+    it { should have_selector('h2', text: user.name) }
     it { should have_selector('title', text: user.name) }
+    it { should have_link('Create a Projection', href: new_projection_path) }
   end # Show page
 
   describe "edit page" do
@@ -52,7 +53,7 @@ describe "User pages" do
       visit edit_user_path(user)
     end
 
-    it { should have_selector('h1', text: "Update your profile") }
+    it { should have_selector('h2', text: "Update your profile") }
     it { should have_selector('title', text: "Edit user") }
     it { should have_link('change', href: 'http://gravatar.com/emails') }
 
@@ -89,7 +90,7 @@ describe "User pages" do
     end
     
     it { should have_selector('title', text: 'All users') }
-    it { should have_selector('h1', text: 'All users') }
+    it { should have_selector('h2', text: 'All users') }
     
     describe "pagination" do
       before(:all) { 30.times { FactoryGirl.create(:user) } }

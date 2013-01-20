@@ -2,10 +2,11 @@
 <div class="row"> 
   <aside class="span4">
     <section>
-      <h1>
+      <h2>
         <%= gravatar_for @user %>
         <%= @user.name %>
-      </h1>
+      </h2>
+      <%= link_to "Create a Projection", new_projection_path %>
     </section>
   </aside>
 </div>

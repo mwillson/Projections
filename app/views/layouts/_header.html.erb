@@ -3,9 +3,13 @@
 
       <%= link_to image_tag("logo_final.png", alt: "Projections"), root_path, id: "logo" %> 
       <% if signed_in? %>
-          <%= link_to current_user.name, current_user, id: "signin" %>
-          <%= link_to "Settings", edit_user_path(current_user), id: "signin" %>
-          <%= link_to "Sign out", signout_path, method: "delete" %>
+        <div id="topnav">
+        <ul class="nav nav-tabs">
+          <li><%= link_to current_user.name, current_user, id: "signin" %></li>
+          <li><%= link_to "Settings", edit_user_path(current_user), id: "signin" %></li>
+          <li><%= link_to "Sign out", signout_path, id: "signin", method: "delete" %></li>
+        </ul>
+        </div>
       <% else %>
         <%= link_to "Sign in", signin_path, id: "signin" %>
       <% end %>
@@ -21,6 +25,7 @@
         <li><%= link_to "Feedback", feedback_path %></li>
         <% if signed_in? %>
           <li><%= link_to "Browse by User", users_path %></li>
+          <li><%= link_to "Create a Projection", new_projection_path %></li>
         <% end %>
     </ul>
   </div>

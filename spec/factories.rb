@@ -6,4 +6,12 @@ FactoryGirl.define do
     password_confirmation "foobar"
     admin false
   end
+
+  factory :projection do
+    name "Test Projection"
+    description "Some description."
+    category "Film"
+    file File.open('Gemfile')
+    user
+  end
 end

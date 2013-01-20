@@ -7,7 +7,7 @@ describe "AuthenticationPages" do
   describe "signin page" do
     before { visit signin_path }
     
-    it { should have_selector('h1', text: 'Sign in') }
+    it { should have_selector('h2', text: 'Sign in') }
     it { should have_selector('title', text: 'Sign in') }
 
     describe "with invalid information" do
@@ -31,6 +31,7 @@ describe "AuthenticationPages" do
       it { should have_link(user.name, href: user_path(user)) }
       it { should have_link('Settings', href: edit_user_path(user)) }
       it { should have_link('Sign out', href: signout_path) }
+      it { should have_link('Create a Projection', href: new_projection_path) }
       it { should_not have_link('Sign in', href: signin_path) }
 
       describe "followed by sign out" do
@@ -72,7 +73,19 @@ describe "AuthenticationPages" do
           end
         end
       end
-    end
+
+      describe "in the projections controller" do
+        describe "submitting to the create action" do
+          before { post projections_path }
+          specify { response.should redirect_to(signin_path) }
+        end
+
+        describe "submitting to the destroy action" do
+          before { delete projection_path(FactoryGirl.create(:projection)) }
+          specify { response.should redirect_to(signin_path) }
+        end
+      end
+    end # non signed in users
 
     describe "as wrong user" do
       let(:user) { FactoryGirl.create(:user) }
@@ -87,7 +100,8 @@ describe "AuthenticationPages" do
         before { put user_path(wrong_user) }
         specify { response.should redirect_to(root_path) }
       end
-    end
+    end # wrong user
+
   end # authorization
     
 end

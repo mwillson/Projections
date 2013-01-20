@@ -1,0 +1,14 @@
+Note: Look up symbols in Ruby
+Study API
+Bookmark: 17:51, first watch intro video on railscasts.com
+
+6-26:
+Found solution to my windows problem
+Couldn't fix Sanjeev's problem, trying windows 7 recovery disk when we can
+Got Ruby on Rails working for everybody
+Working on video again.
+
+Reminders
+tryruby.org
+Ruby API
+GIT 

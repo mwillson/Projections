@@ -10,9 +10,14 @@
 #
 
 class Projection < ActiveRecord::Base
-  acts_as_superclass
 
-  attr_accessible :name, :subtype
-  # validations in this class or subclasses??
+  attr_accessible :name, :category, :description, :file
+  belongs_to :user
+
   validates :name, :presence => true
+  validates :user_id, :presence => true
+  validates :description, presence: true, length: { maximum: 500 }
+  validates :file, presence: true, file_size: { maximum: 5.megabytes.to_i }
+  mount_uploader :file, FileUploader
+  default_scope order: 'projections.created_at DESC'
 end

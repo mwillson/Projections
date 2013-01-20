@@ -61,5 +61,7 @@ module Projections
 
     # Add fonts to asset pipeline
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
+
+    config.autoload_paths += %W(#{config.root}/lib/validators/)
   end
 end

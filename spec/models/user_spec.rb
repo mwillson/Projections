@@ -28,6 +28,7 @@ describe User do
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
+  it { should respond_to(:projections) }
   it { should respond_to(:admin) }
 
   describe "when name is not present" do
@@ -114,4 +115,28 @@ describe User do
     before { @user.save }
     its(:remember_token) { should_not be_blank }
   end
+
+  describe "projection associations" do
+    before { @user.save }
+    let!(:older_projection) do
+      FactoryGirl.create(:projection, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_projection) do
+      FactoryGirl.create(:projection, user: @user, created_at: 1.hour.ago)
+    end
+
+    it "should have the right projs in the right order" do
+      @user.projections.should == [newer_projection, older_projection]
+    end
+
+    it "should destroy associated microposts" do
+      projs = @user.projections.dup
+      @user.destroy
+      projs.should_not be_empty
+      projs.each do |proj|
+        Projection.find_by_id(proj.id).should be_nil
+      end
+    end
+  end
+
 end

@@ -10,7 +10,7 @@
 <body>
   <%= render 'layouts/header' %>
   <div class="content">
-    <div class="container">
+    <div class="container hero-unit">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>

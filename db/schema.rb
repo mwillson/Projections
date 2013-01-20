@@ -11,26 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130118051850) do
-
-  create_table "films", :primary_key => "projection_id", :force => true do |t|
-    t.text "description"
-  end
-
-  create_table "paintings", :primary_key => "projection_id", :force => true do |t|
-    t.text "description"
-  end
+ActiveRecord::Schema.define(:version => 20130119173530) do
 
   create_table "projections", :force => true do |t|
-    t.string   "subtype",    :null => false
+    t.string   "category"
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "file"
   end
 
-  create_table "songs", :primary_key => "projection_id", :force => true do |t|
-    t.text "description"
-  end
+  add_index "projections", ["user_id", "created_at"], :name => "index_projections_on_user_id_and_created_at"
 
   create_table "users", :force => true do |t|
     t.string   "name"
