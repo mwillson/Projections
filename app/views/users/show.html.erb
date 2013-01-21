@@ -1,5 +1,6 @@
 <% provide(:title, @user.name) %>
 <div class="row"> 
+ 
   <aside class="span4">
     <section>
       <h2>
@@ -9,4 +10,15 @@
       <%= link_to "Create a Projection", new_projection_path %>
     </section>
   </aside>
+
+  <div class="span8">
+    <% if @user.projections.any? %>
+      <h3>Projections (<%= @user.projections.count %>)</h3>
+      <ol class="projections">
+        <%= render @projections %>
+      </ol>
+      <%= will_paginate @projections %>
+    <% end %>
+  </div>
+
 </div>

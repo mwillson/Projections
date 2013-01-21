@@ -8,7 +8,7 @@ FactoryGirl.define do
   end
 
   factory :projection do
-    name "Test Projection"
+    sequence(:name) { |n| "Projection#{n}" }
     description "Some description."
     category "Film"
     file File.open('Gemfile')

@@ -1,6 +1,7 @@
 class ProjectionsController < ApplicationController
 
-  before_filter :signed_in_user
+  before_filter :signed_in_user, only: [:new, :create, :destroy]
+  # before_filter :correct_user, only: [:new, :create, :destroy]
 
   def new
     @projection = Projection.new
@@ -14,6 +15,14 @@ class ProjectionsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def show
+    @projection = Projection.find(params[:id])
+  end
+
+  def index
+    @projections = Projection.all
   end
  
   def destroy

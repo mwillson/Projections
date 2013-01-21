@@ -1,19 +1,15 @@
 <header class="navbar">
     <div class="container center" id="top">
-
       <%= link_to image_tag("logo_final.png", alt: "Projections"), root_path, id: "logo" %> 
-      <% if signed_in? %>
-        <div id="topnav">
-        <ul class="nav nav-tabs">
-          <li><%= link_to current_user.name, current_user, id: "signin" %></li>
-          <li><%= link_to "Settings", edit_user_path(current_user), id: "signin" %></li>
-          <li><%= link_to "Sign out", signout_path, id: "signin", method: "delete" %></li>
-        </ul>
-        </div>
-      <% else %>
-        <%= link_to "Sign in", signin_path, id: "signin" %>
-      <% end %>
-
+      <ul class="nav nav-tabs" id="topnav">
+        <% if signed_in? %>
+          <li><%= link_to current_user.name, current_user, id: "toplink" %></li>
+          <li><%= link_to "Settings", edit_user_path(current_user), id: "toplink" %></li>
+          <li><%= link_to "Sign out", signout_path, id: "toplink", method: "delete" %></li>
+        <% else %>
+          <li><%= link_to "Sign in", signin_path, id: "toplink" %></li>
+        <% end %>
+      </ul>
     </div>
 </header>
 
@@ -21,12 +17,13 @@
   <div class="container center">
     <ul id="navlist" class="nav">
         <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Help", help_path %></li>
-        <li><%= link_to "Feedback", feedback_path %></li>
+        <li><%= link_to "Browse Projections", projections_path %></li>
         <% if signed_in? %>
           <li><%= link_to "Browse by User", users_path %></li>
           <li><%= link_to "Create a Projection", new_projection_path %></li>
         <% end %>
+        <li><%= link_to "Help", help_path %></li>
+        <li><%= link_to "Feedback", feedback_path %></li>
     </ul>
   </div>
 </header>

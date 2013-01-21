@@ -38,12 +38,21 @@ describe "User pages" do
   end # Signup page
 
   describe "show page" do
-    let(:user) { FactoryGirl.create(:user) }  
+    let(:user) { FactoryGirl.create(:user) }
+    let!(:p1) { FactoryGirl.create(:projection, user: user) }
+    let!(:p2) { FactoryGirl.create(:projection, user: user) }  
     before { visit user_path(user) }
 
     it { should have_selector('h2', text: user.name) }
     it { should have_selector('title', text: user.name) }
     it { should have_link('Create a Projection', href: new_projection_path) }
+
+    describe "projections" do
+      it { should have_link( p1.name, href: projection_path(p1.id) ) }
+      it { should have_link( p2.name, href: projection_path(p2.id) ) }
+      it { should have_content(user.projections.count) }
+    end
+
   end # Show page
 
   describe "edit page" do

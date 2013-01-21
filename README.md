@@ -1,3 +1,17 @@
+###Planned Features
+
+Artist Accounts - special user accounts which have the ability to send requests
+for projections.
+
+"Star" System - users will be able to "star (*)" users or individual projections. 
+Basically like a watchlist of what's interesting. Useful for users to keep tabs on what
+they want to see happen, as well as for interesting home page content for the site.
+
+"Request system" - this is how artists will interact with users. An artist will be
+able to request a projection that they like and want to use. A message will be sent
+to the user who created the projection, and license terms will be sent to the artist
+along with contact info for the user.
+
 ###PROJECTIONS - AN IDEA COMPANY
 
 The purpose of this readme is to help anyone who uses the site (PROJECTIONS) to use
@@ -31,7 +45,7 @@ Creator - The party responsible for overseeing the implementation and or physica
 
 ###Users
 
-Fill out the form under 'Submit A Projection' from the home page or your user profile
+Fill out the form under 'Create A Projection' from the home page or your user profile
 page. You may be contacted and follow-up information may be requested from you.
 
 The projection submission form will be generated based on the initial category selec
@@ -53,7 +67,7 @@ of time notation over a set of chords, or as formal as is desired.
 By submitting the form, the user is giving express permission to create a certain type
 of Creative Commons copyright license for their submitted work, and thus any artist
 may decide to use that work within the terms of that license, including disbursing benefits 
-to the creator, if applicable.
+to the creator, etc. if applicable.
 
 ###Creators
 

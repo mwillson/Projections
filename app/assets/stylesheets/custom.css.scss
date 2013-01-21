@@ -17,13 +17,17 @@ $grayMediumLight: #eaeaea;
   text-align:center;
 }
 
+.well {
+  background: rgba(255, 255, 255, 0.9);
+}
+
 /* Header */
 
 #logo {
   img {
-    width:40%;
-    height:40%;
-    padding-left:10px;
+    width:30%;
+    height:30%;
+    padding:20px;
     align:center;
     float:left;
    /* margin-bottom: 20px;*/
@@ -34,9 +38,9 @@ $grayMediumLight: #eaeaea;
   background:url('background-grayscale-broken.jpg');
   background-size: 50%;
   .container {
-    background-color:white;
+    /* background-color:white;
     opacity: 50%;
-    /*border: 2px double black;*/
+    border: 2px double black;*/
     padding: 10px;
   }
 }
@@ -46,10 +50,6 @@ $grayMediumLight: #eaeaea;
   .container#top {
     background-image: url(http://s3.amazonaws.com/BlackcloudStatic/img/grid_noise.png);
   }
-}
-
-#topnav {
-  float: right;
 }
 
 #navigation {
@@ -80,17 +80,17 @@ background-image: linear-gradient(to top, #000000 20%, #5E5E5E 100%);
       color:gray;
       &:hover {
         color:yellow;
-        text-decoration:underline;
       }
     }
   }
 }
 
-#signin {
-  color: black;
+#topnav {
   float: right;
-  padding-top: 10px;
-  padding-right: 30px;
+}
+
+#toplink {
+  color: black;
   &:hover {
     text-decoration:underline;
     background: none;
@@ -138,6 +138,7 @@ footer {
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #999;
+  background-color: white;
 }
 
 footer a {
@@ -209,9 +210,16 @@ h1, h2, h3, h4, h5 {
 
 .emphasis {
   text-transform: uppercase;
-  color: yellow;
+  color: #FFFF00;
   font-family: podkova_bold;
   text-shadow: black 0.1em 0.1em 0.2em;
+  &:hover {
+    background: none;
+    text-decoration: none;
+  }
+  &:visited {
+    color: #FFFFFF;
+  }
 }
 
 .debug_dump {
