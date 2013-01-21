@@ -16,7 +16,7 @@ class Projection < ActiveRecord::Base
 
   validates :name, :presence => true
   validates :user_id, :presence => true
-  validates :description, presence: true, length: { maximum: 500 }
+  validates :description, presence: true, length: { maximum: 1000 }
   validates :file, presence: true, file_size: { maximum: 5.megabytes.to_i }
   mount_uploader :file, FileUploader
   default_scope order: 'projections.created_at DESC'
